@@ -3,7 +3,7 @@ function first(x) {
 }
 
 function last(x) {
-    return x[-1];
+    return x[length.x];
 }
 
 function kiss(x){
