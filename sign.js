@@ -1,7 +1,8 @@
 function sign(x) {
     if (x>0){
+
         return 1
-    }else if (x == 0){
+    }else if (x === 0){
         return 0
     }else {
         return -1
@@ -9,9 +10,5 @@ function sign(x) {
 }
 
 function sameSign(a, b) {
-    if (sign(a)===sign(b)) {
-        return true
-    }else{
-        return false
-    }
+    return sign(a) === sign(b);
 }
