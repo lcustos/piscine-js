@@ -4,14 +4,14 @@ let obj = {
     str: "",
     num: 10,
     bool: true,
-    undef: undefined
+    undef: undefined,
 };
 Object.freeze(arr);
 Object.freeze(obj);
 
 
 let nested = {
-    arr : [4, undef, '2'],
+    arr : [4, undefined, '2'],
     obj : {
         str : "",
         num : 10,
