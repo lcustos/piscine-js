@@ -5,3 +5,4 @@ function get(a) {
 function set(a,b) {
     sourceObject.a = b
 }
+
