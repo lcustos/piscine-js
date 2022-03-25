@@ -1,4 +1,4 @@
-let escapeStr = "\',\\,\/,\",\'";
+let escapeStr = "\'\\\/\"\'";
 let arr = [4, '2'];
 let obj = {
     str: "",
@@ -11,11 +11,11 @@ Object.freeze(obj);
 
 
 let nested = {
-    arr : [4, undefined, '2'],
-    obj : {
-        str : "",
-        num : 10,
-        bool : false,
+    arr: [4, undefined, '2'],
+    obj: {
+        str: "",
+        num: 10,
+        bool: false,
     },
 };
 
