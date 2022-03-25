@@ -6,8 +6,7 @@ let obj = {
     bool: true,
     undef: undefined,
 };
-Object.freeze(arr);
-Object.freeze(obj);
+
 
 
 let nested = {
@@ -18,5 +17,14 @@ let nested = {
         bool: false,
     },
 };
-
+Object.freeze(escapeStr);
+Object.freeze(arr);
+Object.freeze(obj);
+Object.freeze(obj.num);
+Object.freeze(obj.bool);
+Object.freeze(obj.str);
+Object.freeze(obj.undef);
 Object.freeze(nested);
+Object.freeze(nested.arr);
+Object.freeze(nested.arr);
+Object.freeze(nested.obj);
