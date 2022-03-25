@@ -1,6 +1,6 @@
-let escapeStr = "\`,\\,\/,\",\'";
-let arr = [4, '2'];
-let obj = {
+const escapeStr = "\`,\\,\/,\",\'";
+const arr = [4, '2'];
+const obj = {
     str: "",
     num: 10,
     bool: true,
@@ -9,7 +9,7 @@ let obj = {
 
 
 
-let nested = {
+const nested = {
     arr: [4, undefined, '2'],
     obj: {
         str: "",
