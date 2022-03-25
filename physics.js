@@ -1,5 +1,3 @@
-math = { f: 10, m: 5, Δv: 100, Δt: 50, t:1, d: 10 }
-
 function getAcceleration(obj){
     let a = obj.f/obj.m
     let b = obj.Δv/obj.Δt
