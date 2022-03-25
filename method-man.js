@@ -14,8 +14,6 @@ function whisper(x) {
     return '*' + x.toLowerCase() + '*'
 }
 
-function capitalize(x) {
-    x = x.toLowerCase()
-    x[0].toUpperCase()
-    return x
+function capitalize(str) {
+    return str.toUpperCase()[0] + str.slice(1).toLowerCase()
 }
