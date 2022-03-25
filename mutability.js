@@ -1,14 +1,15 @@
-const clone1 = {
+let clone1 = {
     ...person
 }
 
-const clone2 = {
+let clone2 = {
     ...person
 }
 
-const samePerson = {
+let samePerson = {
     ...person
 }
+
 Object.freeze(clone1)
 Object.freeze(clone2)
 
