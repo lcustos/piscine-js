@@ -1,7 +1,12 @@
-const clone1 = person
-const clone2 = person
-const samePerson = person
-Object.freeze(samePerson)
+const clone1 = {
+    ...person
+}
 
-person.age+=1
-person.country='FR'
+const clone2 = {
+    ...person
+}
+
+const samePerson = {
+    ...person
+}
+Object.freeze(samePerson)
