@@ -1,15 +1,15 @@
 let clone1 = {
-    ...person
-}
+    ...person,
+};
 
 let clone2 = {
-    ...person
-}
+    ...person,
+};
 
 let samePerson = {
-    ...person
-}
+    ...person,
+};
 
-Object.freeze(clone1)
-Object.freeze(clone2)
+Object.freeze(clone1);
+Object.freeze(clone2);
 
