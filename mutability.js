@@ -9,4 +9,6 @@ const clone2 = {
 const samePerson = {
     ...person
 }
-Object.freeze(samePerson)
+Object.freeze(clone1)
+Object.freeze(clone2)
+
