@@ -8,6 +8,7 @@ function last(x){
 
 function kiss(x){
     let y = [];
-    y = x[0] + x[x.length-1];
+    y[0] = x[0];
+    y[1] = x[x.length-1];
     return y;
 }
