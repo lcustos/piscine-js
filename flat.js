@@ -1,6 +1,9 @@
 const arr1 = [0, 1, 2, [3, 4]];
 
 function flat(array, int){
+    if (typeof int === "undefined"){
+        int = 1
+    }
     let array2 = [];
     for (let i in array){
             if (int === 0){
