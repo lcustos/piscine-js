@@ -1,5 +1,3 @@
-const add4 = '+4'
-const mul2 = '*2'
 let expr = "1"
 let flag = false
 
