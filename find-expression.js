@@ -7,10 +7,10 @@ function findExpression(x) {
     if (x === 1) {
         return expr
     } else if (x - 4 > 0) {
-        expr += ' ' + add4
+        expr = expr.substring(0,1) +' ' + add4 + expr.substring(1,expr.length)
         findExpression(x - 4)
     } else if (x % 2 === 0) {
-        expr += ' ' + mul2
+        expr = expr.substring(0,1) +' ' + mul2 + expr.substring(1,expr.length)
         findExpression(x / 2)
     } else {
         flag = true
