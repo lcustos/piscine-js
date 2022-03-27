@@ -6,7 +6,7 @@ let flag = false
 function findExpression(x) {
     if (x === 1) {
         return expr
-    } else if (x - 4 >= 0) {
+    } else if (x - 4 > 0) {
         expr += ' ' + add4
         findExpression(x - 4)
     } else if (x % 2 === 0) {
