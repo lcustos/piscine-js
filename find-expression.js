@@ -21,7 +21,7 @@ function findExpression(x) {
     // } else {
     //     return expr
     // }
-    return x
+    return expr = x
 }
 
 console.log(findExpression(14))
