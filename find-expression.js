@@ -6,8 +6,6 @@ let flag = false
 function findExpression(x) {
     if (x === 1) {
         return expr
-    } else if (x === 14){
-        return '1 +4 *2 +4'
     } else if (x - 4 > 0) {
         expr = expr.substring(0, 1) + ' ' + add4 + expr.substring(1, expr.length)
         findExpression(x - 4)
