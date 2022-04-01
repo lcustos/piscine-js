@@ -1,6 +1,3 @@
-//Create a function called matchCron it takes a valid cron schedule string and a valid date.
-// It returns true if the date match the pattern of the cron schedule.
-
 function matchCron (cron,date){
     let arr = cron.split(' ')
     let minute = arr[0]
@@ -10,22 +7,22 @@ function matchCron (cron,date){
     let dayWeek = arr[4]
     // console.log(date.getDay()+1)
     let flag = false
-    if(minute === '*'|| minute === date.getMinutes()){
+    if(minute === '*'|| minute == date.getMinutes()){
         flag = true
     }else{
         return false
     }
-    if(hour === '*'|| hour === date.getHours()){
+    if(hour === '*'|| hour == date.getHours()){
         flag = true
     }else{
         return false
     }
-    if(dayOfMonth === '*'|| dayOfMonth === date.getDate()){
+    if(dayOfMonth === '*'|| dayOfMonth == date.getDate()){
         flag = true
     }else{
         return false
     }
-    if(month === '*'|| month === date.getMonth()+1){
+    if(month === '*'|| month == date.getMonth()+1){
         flag = true
     }else{
         return false
@@ -42,4 +39,5 @@ function matchCron (cron,date){
     }
     return flag
 }
-console.log(matchCron('9 * * * *', new Date('2020-05-30 18:09:00')));
+
+console.log(matchCron('* * * 2 *', new Date('2021-02-01 00:00:00')))
