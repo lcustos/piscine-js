@@ -22,3 +22,5 @@ function bloodySunday(date) {
     return "Saturday";
   }
 }
+
+console.log(bloodySunday(new Date('0001-01-07')));
