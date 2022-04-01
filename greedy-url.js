@@ -1,14 +1,14 @@
-//getURL that returns an array with all valid URLs present in a data-set, http and https
+//getURL that returns an array with all valid URLs present in a data-set, http and https.
 
 function getURL(dataset) {
-  var url = [];
-  var regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
-  for (var i = 0; i < dataset.length; i++) {
-    if (regex.test(dataset[i])) {
-      url.push(dataset[i]);
+    let url = [];
+    let regex = /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+    for (let i = 0; i < dataset.length; i++) {
+        if (regex.test(dataset[i])) {
+            url.push(dataset[i]);
+        }
     }
-  }
-  return url;
+    return url;
 }
 
 //greedyQuery that returns URL with at least 3 or more parameters from all URLs that contain a query.
@@ -42,3 +42,5 @@ function notSoGreedy(url) {
     }
     return url;
 }
+
+console.log(getURL(dataset));
