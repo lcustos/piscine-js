@@ -1,19 +1,39 @@
-//Create a function firstDayWeek that receives a week of the year (from 1 to 53) and a year (as a string), and returns the first day of that week, in the format: 'dd-mm-yyyy'.
-//
-// In this task you have to assume that the week #1 is in all cases the week which contains the 1st of January.
-//
-// By beginning of the week we mean the monday of that week.
-//
-// If the first week is requested and it starts on the previous year of the presented one, it should return the first day of the year.
+function firstDayWeek(week,year){
+    let time = new Date(year)
+    if(week === 1){
+        time.setHours(24)
+        return formattedDate(time)
+    }
+    let dayPlus = week*7*24
+    time.setHours(dayPlus-123)
+    console.log(time)
+    function getWeekDay(date) {
+        let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        return days[date.getDay()-1];
+    }
+    function formattedDate(d) {
+        let month = String(d.getMonth() + 1);
+        let day = String(d.getDate()-1);
+        let year = String(d.getFullYear());
 
-function firstDayWeek(week, year) {
-    let date = new Date(year, 0, 1);
-    let day = date.getDay();
-    let firstDay = date.getDate() - day + 1;
-    let firstDayWeek = new Date(year, 0, firstDay + (week - 1) * 7);
-    return firstDayWeek.toLocaleDateString('en-GB', {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric'
-    });
+        if (month.length < 2) month = '0' + month;
+        if (day.length < 2) day = '0' + day;
+        if (year.length === 1) year = '000' + year;
+        if (year.length === 2) year = '00' + year;
+        if (year.length === 3) year = '0' + year;
+
+
+        return `${day}-${month}-${year}`;
+    }
+    for(let i = 0;i<7;i++){
+        let today = getWeekDay(time)
+        if(today === 'Monday'){
+            let res = formattedDate(time)
+            return res
+        }
+        time.setHours(-24)
+    }
+    return time
 }
+
+console.log(firstDayWeek(1, '1000'));
