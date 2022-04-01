@@ -16,6 +16,7 @@ function addWeek(date){
     return 'second'+day
   }
 }
+
 function timeTravel({date,hour,minute,second}){
   date.setHours(hour)
   date.setMinutes(minute)
@@ -23,4 +24,10 @@ function timeTravel({date,hour,minute,second}){
   return date
 }
 
-console.log(timeTravel(addWeek(new Date('0001-01-01'))))
+console.log(addWeek(new Date('0001-01-01')))
+console.log(timeTravel({
+  date: new Date('2020-05-29 23:25:22'),
+  hour: 21,
+  minute: 22,
+  second: 22,
+}).toString())
