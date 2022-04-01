@@ -42,5 +42,3 @@ function notSoGreedy(url) {
     }
     return url;
 }
-
-console.log(getURL(dataset));
