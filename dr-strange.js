@@ -1,22 +1,26 @@
-//Instead of a normal week having only 7 days, it will have 14 days. Let me explain, this new week will have 14 days, from Monday to Sunday then secondMonday to secondSunday. Your purpose is to create a new function addWeek, that takes as parameter a Date and that will return what week day the given date is, according to your new week format. Week number should be count from 0001-01-01.
-
-function addWeek(date) {
-  let day = date.getDay();
-  let week = date.getDate() + day;
-  if (week > 14) {
-    week = week - 14;
+function addWeek(date){
+  let day0 = new Date('0001-01-01')
+  function diffDates(day_one, day_two) {
+    return ((day_one-day_two) / (60 * 60 * 24 * 1000))/7
   }
-  return week;
+  function getWeekDay(date) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[date.getDay()];
+  }
+  let diff = diffDates(date,day0)%2
+  if(diff%2===0||diff<1){
+    return getWeekDay(date)
+  }
+  else {
+    let day = getWeekDay(date)
+    return 'second'+day
+  }
+}
+function timeTravel({date,hour,minute,second}){
+  date.setHours(hour)
+  date.setMinutes(minute)
+  date.setSeconds(second)
+  return date
 }
 
-//Now imagine you have a doctor appointment and you have to wait some hours, but you do not want to wait, so you decided that you need to create a function timeTravel that allows you to change the time according to your needs. This function will give you the power to go backwards or forwards in time.
-//
-// So, you will have a function that takes an object with the following {date, hour, minute, second}. This object will be responsible for changing the hour, minute and second of the given date.
-
-function timeTravel(date) {
-  let newDate = new Date(date.date);
-  newDate.setHours(date.hour);
-  newDate.setMinutes(date.minute);
-  newDate.setSeconds(date.second);
-  return newDate;
-}
+console.log(timeTravel(addWeek(new Date('0001-01-01'))))
