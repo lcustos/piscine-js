@@ -6,29 +6,27 @@
 // isFuture, will return true if the date given as parameter is valid and higher than the present date
 // isPast, will return true if the date given as parameter is valid and less than the present date
 
-function isValid(date) {
-    let dateArray = date.split('/');
-    let day = dateArray[0];
-    let month = dateArray[1];
-    let year = dateArray[2];
-    let dateObject = new Date(year, month - 1, day);
-    return dateObject.getFullYear() === year && dateObject.getMonth() + 1 === month && dateObject.getDate() === day;
+function isValid(date){
+    return !(isNaN(date) || date === 0);
 }
-
-function isAfter(date1, date2) {
-    return date1 > date2;
+function isAfter(date1,date2){
+    let res = date1 - date2
+    return res > 0;
 }
-
-function isBefore(date1, date2) {
-    return date1 < date2;
+function isBefore(date1,date2){
+    let res = date1 - date2
+    return res < 0;
 }
-
-function isFuture(date) {
-    return isAfter(date, new Date());
+function isFuture(date1){
+    let date2 = new Date()
+    let res = date1 - date2
+    return res > 0;
 }
-
-function isPast(date) {
-    return isBefore(date, new Date());
+function isPast(date1){
+    if(!isValid(date1)){
+        return false
+    }
+    let date2 = new Date()
+    let res = date1 - date2
+    return res < 0;
 }
-
-console.log(isValid(''));
