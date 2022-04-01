@@ -12,5 +12,4 @@ function letterSpaceNumber(str){
         return res
     }
     return res
-
 }
