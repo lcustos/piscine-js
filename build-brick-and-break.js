@@ -21,17 +21,18 @@ export function build(x){
     return block
 }
 
-export function repair(...repair){
-    let i = 0
-    let interval = setInterval(function(){
-        if(repair[i].dataset.foundation === 'true'){
-            repair[i].style.backgroundColor = 'red'
+export function repair(...repairs){
+    for (let i = 0; i < repairs.length; i++) {
+        let elem = document.getElementById(repairs[i])
+        let n = repairs[i].replace('brick-', '')
+        if(n%3===2){
+            elem.setAttribute('data-repaired',"in progress")
+            elem.innerHTML = n
+        }else{
+            elem.setAttribute("data-repaired","true")
+            elem.innerHTML = n
         }
-        ++i
-        if(i===repair.length){
-            clearInterval(interval)
-        }
-    },100,i)
+    }
 }
 
 export function destroy(){
