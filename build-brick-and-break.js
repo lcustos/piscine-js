@@ -20,3 +20,21 @@ export function build(x){
     },100,i)
     return block
 }
+
+export function repair(...repair){
+    let i = 0
+    let interval = setInterval(function(){
+        if(repair[i].dataset.foundation === 'true'){
+            repair[i].style.backgroundColor = 'red'
+        }
+        ++i
+        if(i===repair.length){
+            clearInterval(interval)
+        }
+    },100,i)
+}
+
+export function destroy(){
+    let elements = document.querySelectorAll('div[id^="brick"]')
+    elements[elements.length-1].remove()
+    }
